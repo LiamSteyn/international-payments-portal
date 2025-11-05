@@ -129,7 +129,7 @@ const App = () => {
         return;
       }
 
-      alert(`Payment successful!\nTransaction ID: ${data.transactionId}\nAmount: $${formData.amount}`);
+      alert(`Payment successful!\nTransaction ID: ${data.transactionId}\nAmount: R${formData.amount}`);
       setFormData(prev => ({
         ...prev,
         amount: '',
@@ -188,7 +188,7 @@ const App = () => {
           )}
 
           <div className="form-group">
-            <label className="form-label">Payment Amount (USD)</label>
+            <label className="form-label">Payment Amount (Rand)</label>
             <input
               type="number"
               name="amount"
@@ -210,7 +210,7 @@ const App = () => {
               value={formData.recipientName}
               onChange={handleInputChange}
               className="form-input"
-              placeholder="John Doe"
+              placeholder="John"
               disabled={loading}
             />
             {errors.recipientName && <div className="error-message">{errors.recipientName}</div>}
@@ -224,14 +224,14 @@ const App = () => {
               value={formData.recipientAccount}
               onChange={handleInputChange}
               className="form-input"
-              placeholder="IBAN or Account Number"
+              placeholder="Account Number"
               disabled={loading}
             />
             {errors.recipientAccount && <div className="error-message">{errors.recipientAccount}</div>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">SWIFT/BIC Code</label>
+            <label className="form-label">Code</label>
             <input
               type="text"
               name="swiftCode"

@@ -3,10 +3,33 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import validator from 'validator';
 
-const router = express.Router();
 
 // In-memory user store (replace with database in production)
 const users = new Map();
+
+// Pre-seed employee account
+(async () => {
+  const hashedPass = await bcrypt.hash('Employee123!', 10);
+  users.set('employee@company.com', {
+    email: 'employee@company.com',
+    password: hashedPass,
+    userType: 'employee',
+    createdAt: new Date()
+  });
+
+  // Pre-seed CUSTOMER account (New Addition)
+  const customerHashedPass = await bcrypt.hash('CustomerPass1!', 10);
+  users.set('customer@example.com', {
+    email: 'customer@example.com',
+    password: customerHashedPass,
+    userType: 'customer',
+    createdAt: new Date()
+      });
+
+})();
+
+const router = express.Router();
+
 
 // Validation Functions
 const validateEmail = (email) => {
@@ -28,6 +51,13 @@ const sanitizeInput = (input) => {
 
 // Register Route
 router.post('/register', async (req, res) => {
+  return res.status(403).json({
+        success: false,
+        message: 'Registration feature is currently unavailable. Coming Soon!'
+    });
+
+  /* 
+  // Register Route Logic
   try {
     let { email, password, userType } = req.body;
 
@@ -91,6 +121,7 @@ router.post('/register', async (req, res) => {
       message: 'Registration failed'
     });
   }
+    */
 });
 
 // Login Route
