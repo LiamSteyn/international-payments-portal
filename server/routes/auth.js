@@ -19,7 +19,7 @@ let accountsSeeded = false;
     createdAt: new Date()
   });
 
-  const customerHashedPass = await bcrypt.hash('CustomerPass1!', 10);
+  const customerHashedPass = await bcrypt.hash('Customer123!', 10);
   users.set('customer@example.com', {
     email: 'customer@example.com',
     password: customerHashedPass,
