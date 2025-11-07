@@ -13,7 +13,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.projectKey=https://sonarcloud.io/project/overview?id=LiamSteyn_international-payments-portal
+            -Dsonar.projectKey=LiamSteyn_international-payments-portal
             -Dsonar.organization=https://sonarcloud.io/organizations/liamsteyn/projects
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
