@@ -60,20 +60,6 @@ To run just the backend server:
 npm run dev:server
 ```
 
-### Production Build
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-To preview the production build:
-
-```bash
-npm run preview
-```
-
 ## Project Structure
 
 ```
