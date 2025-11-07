@@ -12,6 +12,7 @@ A secure payment portal application with separate customer and employee authenti
   - Rate limiting
   - CSRF protection
   - SSL/TLS enforcement
+  
 - **Payment Processing**: Secure international payment handling with SWIFT code support
 
 ## Prerequisites
@@ -88,7 +89,6 @@ international-payment-portal/
 
 ## API Endpoints
 
-- `POST /api/auth/register` - Register new user
 - `POST /api/auth/login` - Login user
 - `POST /api/payments/process` - Process payment (requires authentication)
 
@@ -118,7 +118,6 @@ The application uses the following default configuration:
 - Never commit sensitive data like API keys or secrets
 - Always use HTTPS in production
 - Regularly update dependencies to patch security vulnerabilities
-- Implement proper rate limiting in production
 
 ## License
 
