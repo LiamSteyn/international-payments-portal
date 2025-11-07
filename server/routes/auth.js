@@ -143,10 +143,10 @@ router.post('/login', async (req, res) => {
         email: user.email,
         userType: user.userType
       },
-      process.env.JWT_SECRET || 'your-secret-key-change-in-production',
-      { expiresIn: '24h' }
+      process.env.JWT_SECRET || 'test',
+      { expiresIn: '1h' }
     );
-    console.log('   ✓ JWT token generated (24h expiration)');
+    console.log('   ✓ JWT token generated (1h expiration)');
     console.log(`   ✓ Token payload: { email: ${user.email}, userType: ${user.userType} }`);
 
     console.log('\n   ✅ LOGIN SUCCESSFUL');

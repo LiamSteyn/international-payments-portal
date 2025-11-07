@@ -31,7 +31,7 @@ export const verifyToken = (req, res, next) => {
     
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+      process.env.JWT_SECRET || 'test'
     );
     
     console.log('   ✓ Token signature valid');
